@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ... (other head elements) ... -->
+  </head>
+  <body>
+    <h2>Summary</h2>
+    <p>{{ summary }}</p>
+    
+    <h2>Original Word Count</h2>
+    <p>{{ original_word_count }}</p>
+
+    <h2>Summary Word Count</h2>
+    <p>{{ summary_word_count }}</p>
+    
+    <h2>Lexical Diversity</h2>
+    <p>{{ lexical_diversity }}</p>
+    
+    <h2>Word Cloud</h2>
+    <img src="/static/word_cloud.png" alt="Word Cloud">
+    
+    <h2>Unique Word Cloud</h2>
+    <img src="/static/unique_word_cloud.png" alt="Unique Word Cloud">
+
+    <h2>Bigram Frequency</h2>
+    <ul>
+      {% for bigram, frequency in bigram_frequency.items() %}
+      <li>{{ bigram }}: {{ frequency }}</li>
+      {% endfor %}
+    </ul>
+    
+    <h2>Trigram Frequency</h2>
+    <ul>
+      {% for trigram, frequency in trigram_frequency.items() %}
+      <li>{{ trigram }}: {{ frequency }}</li>
+      {% endfor %}
+    </ul>
+    
+    <h2>Bigram Collocation</h2>
+    <ul>
+      {% for bigram, frequency in bigram_collocation %}
+      <li>{{ bigram }}: {{ frequency }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Trigram Collocation</h2>
+    <ul>
+      {% for trigram, frequency in trigram_collocation %}
+      <li>{{ trigram }}: {{ frequency }}</li>
+      {% endfor %}
+    </ul>
+
+    <!-- ... (other body elements) ... -->
+  </body>
+</html>
